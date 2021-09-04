@@ -39,14 +39,4 @@ public class ToEmail implements Serializable {
         return name;
     }
 
-//    //单个接收方
-//    private String Stos;
-//
-//    public void setStos(String stos) {
-//        Stos = stos;
-//    }
-//
-//    public String getStos() {
-//        return Stos;
-//    }
 }

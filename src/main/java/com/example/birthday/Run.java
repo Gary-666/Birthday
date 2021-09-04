@@ -30,7 +30,6 @@ public class Run {
         users=this.userService.findBirToUsers();
         System.out.println(users.size());
         this.userService.sendBirEmail(users);
-       // System.out.println("执行任务的时间:"+ LocalDateTime.now());
     }
 
     //每月凌晨一点发送本周的所有数据
@@ -42,6 +41,5 @@ public class Run {
         List<User> users1;
         users1=this.userService.findBirMoUsers();
         this.userService.sendBosEmail(users1,bos);
-        //System.out.println("执行任务的时间00:");
     }
 }

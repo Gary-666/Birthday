@@ -32,16 +32,12 @@ public class UserServiceImpl implements UserService {
             SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
             String date0;
             date0=simpleDateFormat.format(date);
+            //判断是否获取的是同月同日的
             NMonth=date0.toString().split("-")[1];
             NDay=date0.toString().split("-")[2];
-//            System.out.println(NMonth);
-//            System.out.println(NDay);
             String date1=simpleDateFormat.format(s.getBirthaday());
             GMonth=date1.toString().split("-")[1];
             GDay=date1.toString().split("-")[2];
-//            System.out.println(GMonth);
-//            System.out.println(GDay);
-//            System.out.println("----------------------");
             if(NMonth.equals(GMonth)&&NDay.equals(GDay))
                 uusers.add(s);
         }
@@ -50,18 +46,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void sendBirEmail(List<User> users) throws MessagingException {
-        int Usize=users.size(); //用于统计符合要求的人数。
-        int i=0;//用于下面计数
-
-
-        //给生日者发送的
-//        String []bir=new String[Usize];
-//        String []birName=new String[Usize];
-
-
         for(User user:users){
-//           bir[i]=user.getEmail();
-//           birName[i]=user.getUsername();
            String []bir=new String[]{user.getEmail()};
            String []birName=new String[]{user.getUsername()};
            ToEmail toBirEmail=new ToEmail();
@@ -69,15 +54,7 @@ public class UserServiceImpl implements UserService {
            toBirEmail.setTos(bir);
            toBirEmail.setName(birName);
            this.sendEmails.sendBirMail(toBirEmail);
-//           i++;
         }
-//        System.out.println(bos);
-//
-//        //给老板发送的 这里直接写下;
-//         ToEmail toBosEmail=new ToEmail();
-//         toBosEmail.setSubject("Exermon发来提醒");
-//         toBosEmail.setTos(bos);
-//         this.sendEmails.sendBosMail(toBosEmail);
     }
 
     @Override
@@ -124,45 +101,6 @@ public class UserServiceImpl implements UserService {
         toBosEmail.setTos(bos);
         toBosEmail.setName(birNameWbirDate);
         this.sendEmails.sendBosMail(toBosEmail);
-
     }
-//    @Override
-//    public void addUser(User user)
-//    {
-//        userMapper.save(user);
-//    }
-//
-//    @Override
-//    public void deleteUserById(int uid){
-//        userMapper.deleteById(uid);
-//    }
-//
-//    @Override
-//    public void updateUser(User user)
-//    {
-//        userMapper.save(user);
-//    }
-//
-//    @Override
-//    public User selectUserById(int uid) {
-//        return userMapper.getById(uid);
-//    }
-//
-//    @Override
-//    public List<User> selectAllUsers() {
-//        return userMapper.findAll();
-//    }
-//
-//    @Override
-//    public void addUserList(List<User> userList) {
-//          userMapper.saveAll(userList);
-//    }
-//
-//    @Override
-//    public  String getBirDate(Date date){
-//        DateFormat df1=DateFormat.getDateInstance();
-//        System.out.println(df1.format(date));
-//        System.out.println(date.toString().split("-")[0]);
-//        return df1.format(date);
-//    }
+
 }

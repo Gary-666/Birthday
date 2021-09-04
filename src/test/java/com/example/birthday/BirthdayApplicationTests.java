@@ -45,13 +45,15 @@ class BirthdayApplicationTests {
     public void contextLoads() throws MessagingException, ParseException {
 
 //        this.userMapper.deleteById(5);
-//        this.userMapper.deleteById(6);
-//        Date date0=new Date(2001,9-1,4);
+//        this.userMapper.deleteById(7);
+//        String date0="2001-09-04";
+//        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+//        Date Date0=simpleDateFormat.parse(date0);
 //        User user=new User();
 //        user.setUsername("马嘉锐");
 //        user.setAge(20);
-//        user.setBirthaday(date0);
-//        user.setEmail("1471835995@qq.com");
+//        user.setBirthaday(Date0);
+//        user.setEmail("396977640@qq.com");
 //        user.setPhone("18138776902");
 //        user.setQq(1471835995);
 //        user.setTimeset(3);
@@ -60,17 +62,17 @@ class BirthdayApplicationTests {
 //        this.userMapper.save(user);
 
         //发送给生日者
-        List<User> users;
-        users=this.userService.findBirToUsers();
-        System.out.println(users.size());
-        this.userService.sendBirEmail(users);
-
-        //发送给老板们
-        //老板们的邮箱
-        String []bos={"396977640@qq.com"};
-        List<User> users1;
-        users1=this.userService.findBirMoUsers();
-        this.userService.sendBosEmail(users1,bos);
+//        List<User> users;
+//        users=this.userService.findBirToUsers();
+//        System.out.println(users.size());
+//        this.userService.sendBirEmail(users);
+//
+//        //发送给老板们
+//        //老板们的邮箱
+//        String []bos={"396977640@qq.com"};
+//        List<User> users1;
+//        users1=this.userService.findBirMoUsers();
+//        this.userService.sendBosEmail(users1,bos);
 
 //        //给生日者的
 //        String[] bir={"1471835995@qq.com"};
